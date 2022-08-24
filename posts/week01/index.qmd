@@ -1,0 +1,18 @@
+---
+title: "Basic communication theory and practice"
+author: "Emi Tanaka"
+date: "2022-07-25"
+categories: [lecture]
+image: "image.jpg"
+---
+
+## Aims
+
+* Basic communication theory and its relevancy with communicating with data
+* Demonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring
+* Identify and apply rhetorical elements to improve data storytelling 
+* Clearly articulate and express technical problems for others to help you
+
+## Slides
+
+<iframe src="https://cwd.numbat.space/lectures/lecture-01.html" style="border: 1px solid black;" width="100%" height = "400px"></iframe>

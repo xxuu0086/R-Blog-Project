@@ -1,0 +1,19 @@
+---
+title: "Introduction to web technologies"
+author: "Emi Tanaka"
+date: "2022-08-01"
+categories: [lecture]
+image: "image.jpeg"
+---
+
+
+## Aim 
+
+* Understand the make up of web documents, i.e. HTML, CSS and JS
+* Write basic HTML and CSS with valid syntax
+* Use CSS selectors to apply new styles 
+* Integrate CSS and JS to R markdown documents with HTML output
+
+## Slides
+
+<iframe src="https://cwd.numbat.space/lectures/lecture-02.html" style="border: 1px solid black;" width="100%" height = "400px"></iframe>

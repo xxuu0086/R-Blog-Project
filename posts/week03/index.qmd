@@ -1,0 +1,39 @@
+---
+title: "Communicating data with interactive web apps"
+author: "Emi Tanaka"
+date: "2022-08-08"
+categories: [lecture]
+image: "image.jpg"
+---
+
+
+## Aim
+
+* Use interactivity to enable data exploration, understanding and communication
+* Design web apps with displays that fit for the purpose
+* Make web applications using `shiny`
+
+<iframe src="https://cwd.numbat.space/lectures/lecture-03.html" style="border: 1px solid black;" width="100%" height = "400px"></iframe>
+
+## Analysis
+
+```{r, message = FALSE}
+library(tidyverse)
+library(tidycovid19)
+df <- download_merged_data(cached = TRUE, silent = TRUE)
+```
+
+```{r trend-plot}
+g <- df %>% 
+  filter(country == "Australia") %>% 
+  mutate(cases_new = diff(c(0, confirmed))) %>% 
+  filter(between(date, as.Date("2022-03-01"), as.Date("2022-08-30"))) %>% 
+  ggplot(aes(date, cases_new)) +
+  geom_line() +
+  labs(x = "Date", y = "New COVID-19 Cases",
+       title = "Australia") +
+  theme_classic(base_size = 14)
+
+plotly::ggplotly(g)
+```
+
