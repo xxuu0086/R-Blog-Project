@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "posts/week01/index.html",
+    "href": "posts/week01/index.html",
+    "title": "Basic communication theory and practice",
+    "section": "",
+    "text": "Basic communication theory and its relevancy with communicating with data\nDemonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring\nIdentify and apply rhetorical elements to improve data storytelling\nClearly articulate and express technical problems for others to help you"
+  },
+  {
+    "objectID": "posts/week01/index.html#slides",
+    "href": "posts/week01/index.html#slides",
+    "title": "Basic communication theory and practice",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog Template",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "posts/week02/index.html",
+    "href": "posts/week02/index.html",
+    "title": "Introduction to web technologies",
+    "section": "",
+    "text": "Understand the make up of web documents, i.e. HTML, CSS and JS\nWrite basic HTML and CSS with valid syntax\nUse CSS selectors to apply new styles\nIntegrate CSS and JS to R markdown documents with HTML output"
+  },
+  {
+    "objectID": "posts/week02/index.html#slides",
+    "href": "posts/week02/index.html#slides",
+    "title": "Introduction to web technologies",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "posts/week03/index.html",
+    "href": "posts/week03/index.html",
+    "title": "Communicating data with interactive web apps",
+    "section": "",
+    "text": "Use interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny"
+  },
+  {
+    "objectID": "posts/week03/index.html#analysis",
+    "href": "posts/week03/index.html#analysis",
+    "title": "Communicating data with interactive web apps",
+    "section": "Analysis",
+    "text": "Analysis\n\nlibrary(tidyverse)\nlibrary(tidycovid19)\ndf <- download_merged_data(cached = TRUE, silent = TRUE)\n\n\ng <- df %>% \n  filter(country == \"Australia\") %>% \n  mutate(cases_new = diff(c(0, confirmed))) %>% \n  filter(between(date, as.Date(\"2022-03-01\"), as.Date(\"2022-08-30\"))) %>% \n  ggplot(aes(date, cases_new)) +\n  geom_line() +\n  labs(x = \"Date\", y = \"New COVID-19 Cases\",\n       title = \"Australia\") +\n  theme_classic(base_size = 14)\n\nplotly::ggplotly(g)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ETC5523 Blog Assessment",
+    "section": "",
+    "text": "lecture\n\n\n\n\n\n\n\n\n\n\n\nAug 8, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nlecture\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nlecture\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 18, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a blog template for the ETC5523 Communicating with Data assessment at Monash University."
+  }
+]
