@@ -1,8 +1,8 @@
 ---
 title: "Basic communication theory and practice"
-author: "Emi Tanaka"
+author: "Xianghe"
 date: "2022-07-25"
-categories: [lecture]
+categories: [analysis, code]
 image: "image.jpg"
 ---
 

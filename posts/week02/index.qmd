@@ -1,8 +1,8 @@
 ---
 title: "Introduction to web technologies"
-author: "Emi Tanaka"
+author: "Xianghe Xu"
 date: "2022-08-01"
-categories: [lecture]
+categories: [analysis, code]
 image: "image.jpeg"
 ---
 
