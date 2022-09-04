@@ -2,15 +2,30 @@ project:
   type: website
 
 website:
-  title: "Xianghe's Blog Website"
+  title: "Global Coffee Chain"
   navbar:
+    background: success
+    left:
+      - icon: home
+      - text: Home
+        file: index.qmd
+      - text: About
+        file: about.qmd
+      - text: Data
+        menu:
+        - text: Data Website
+          href: https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-07
+        - text: Data Download
+          href: https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-05-07/week6_coffee_chains.xlsx?raw=true
+      - text: Shiny app
+        href: https://kmmcvr-xianghe-xu.shinyapps.io/global-coffee-chain-xxuu0086/
+
     right:
-      - about.qmd
       - icon: github
         href: https://github.com/etc5523-2022/blog-xxuu0086
 format:
   html:
-    theme: cosmo
+    theme: cerulean
     css: styles.css
 
 

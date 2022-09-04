@@ -1,5 +1,5 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "Xianghe's Blog Website"
 listing:
   contents: posts
   sort: "date desc"
