@@ -6,8 +6,8 @@ about:
   links:
     - icon: github
       text: Github
-      href: https://github.com/etc5523-2022
+      href: https://github.com/etc5523-2022/blog-xxuu0086
 
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+This is a blog website assignment for the ETC5523 Communicating with Data assessment at Monash University.
