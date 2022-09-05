@@ -1,0 +1,35 @@
+---
+title: "Data Tables "
+toc: true
+---
+
+## Aim
+
+This page provides an alternative to access the data set directly. 
+
+
+
+
+## Starbucks
+
+```{r echo=FALSE, warning=FALSE}
+library(DT)
+coffee <- readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx")
+coffee2 <-
+  readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 2)
+coffee3 <-
+  readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 3)
+datatable(coffee)
+```
+
+## Tim Hortons
+
+```{r echo=FALSE, warning=FALSE}
+datatable(coffee2)
+```
+
+## Dunkin' Donuts
+
+```{r echo=FALSE, warning=FALSE}
+datatable(coffee3)
+```

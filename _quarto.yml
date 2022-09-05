@@ -6,23 +6,27 @@ website:
   navbar:
     background: success
     left:
-      - icon: home
       - text: Home
         file: index.qmd
       - text: About
         file: about.qmd
       - text: Data
         menu:
-        - text: Data Website
+        - text: Data Source Website
           href: https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-07
         - text: Data Download
           href: https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-05-07/week6_coffee_chains.xlsx?raw=true
-      - text: Shiny app
+        - text: Data Table
+          file: datatable.qmd
+      - text: Shiny
+        href: https://kmmcvr-xianghe-xu.shinyapps.io/global-coffee-chain-xxuu0086/
+      - icon: link-45deg
         href: https://kmmcvr-xianghe-xu.shinyapps.io/global-coffee-chain-xxuu0086/
 
     right:
       - icon: github
         href: https://github.com/etc5523-2022/blog-xxuu0086
+    pinned: true
 format:
   html:
     theme: cerulean

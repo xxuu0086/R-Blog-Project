@@ -1,6 +1,7 @@
 ---
 title: "Communicating data with interactive web apps"
 author: "Xianghe Xu"
+toc: true
 date: "2022-08-08"
 categories: [analysis, code]
 image: "image.jpg"
