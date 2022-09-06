@@ -10,6 +10,8 @@ image: "map.jpg"
 <br>
 
 ```{r echo=FALSE, warning=FALSE}
+library(tidyverse)
+library(kableExtra)
 coffee <- readxl::read_xlsx("week6_coffee_chains.xlsx")
 coffee2 <- readxl::read_xlsx("week6_coffee_chains.xlsx", sheet = 2)
 coffee3 <- readxl::read_xlsx("week6_coffee_chains.xlsx", sheet = 3)
@@ -28,14 +30,23 @@ The history of coffee can be traced hundreds of years ago, and it is becoming a 
 
 ## Data Description
 
-The data is stored in a XLSX file and contains three set of coffee chain data, which corresponding to Starbucks, Tim Hortons and Dunkin' Donuts respectively. Starbucks, Tim Hortons and Dunkin' Donuts, which are the three of main coffee chains in the world. The variables in each of coffee chain data set can be categorized into two groups; the business store detail (store name, store number and store phone number etc) and the geographical location information (i.e. address, postcode, city, country, longitude and latitude etc). 
+The data is stored in a XLSX file and contains three set of coffee chain data, which corresponding to Starbucks, Tim Hortons and Dunkin' Donuts respectively. __Starbucks, Tim Hortons and Dunkin' Donuts__, which are the three of main coffee chains in the world. The variables in each of coffee chain data set can be categorized into two groups; the business store detail (store name, store number and store phone number etc) and the geographical location information (i.e. address, postcode, city, country, longitude and latitude etc). 
 
-The Starbucks data set contains __`r nrow(coffee)`__ observations and __`r ncol(coffee)`__ variables, and it has included the Starbucks coffeehouses in __`r length(unique(coffee$Country))`__ countries.
+The Starbucks data set contains __`r nrow(coffee)`__ observations and __`r ncol(coffee)`__ variables, and it has included the Starbucks coffeehouses in __`r length(unique(coffee$Country))`__ countries. The Tim Hortons data set contains __`r nrow(coffee2)`__ observations and __`r ncol(coffee2)`__ variables, and it contains only __`r length(unique(coffee2$country))`__ countries' coffeehouses data, which are USA and Canada. Similarly, the Dunkin' Donuts data set contains __`r nrow(coffee3)`__ observations and __`r ncol(coffee3)`__ variables, and it contains only __`r length(unique(coffee3$e_country))`__ country' coffeehouses data, which is __`r unique(coffee3$e_country)`__.
+
+```{r echo=FALSE, warning=FALSE}
+#| tbl-cap: _Dimension Table of the three coffee chainnn_
+a <- data.frame("Dimension" = c("No. Observation", "No. Varable", "No. Country"), "Starbucks" = c(dim(coffee), length(unique(coffee$Country))), "Tim Hortons" = c(dim(coffee2),length(unique(coffee2$country))), "Dunkin' Donuts" = c(dim(coffee3), length(unique(coffee3$e_country))))
+a %>%
+  kable() %>%
+  kable_classic()
+```
+
 
 and data set also shows that the majority part of business are located in USA and Canada. Moreover, this coffee chain data also includes the coffee chain name, business name and some other location of each coffeehouse. 
 
 The data source is from github [coffee chains](https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-05-07) data.
 
-## Data Resources
+## Reference
 
-<iframe src="https://cwd.numbat.space/lectures/lecture-01.html" style="border: 1px solid black;" width="100%" height = "400px"></iframe>
+
