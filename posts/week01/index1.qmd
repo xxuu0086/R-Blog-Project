@@ -12,6 +12,8 @@ image: "map.jpg"
 ```{r echo=FALSE, warning=FALSE}
 library(tidyverse)
 library(kableExtra)
+library(ggplot2)
+library(plotly)
 coffee <- readxl::read_xlsx("week6_coffee_chains.xlsx")
 coffee2 <- readxl::read_xlsx("week6_coffee_chains.xlsx", sheet = 2)
 coffee3 <- readxl::read_xlsx("week6_coffee_chains.xlsx", sheet = 3)
@@ -49,4 +51,19 @@ The data source is from github [coffee chains](https://github.com/rfordatascienc
 
 ## Reference
 
+Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J,
+Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K,
+Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” _Journal of Open Source Software_,
+*4*(43), 1686. doi: 10.21105/joss.01686 (URL: https://doi.org/10.21105/joss.01686).
+
+Hao Zhu (2021). kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. R package version
+  1.3.4. https://CRAN.R-project.org/package=kableExtra
+
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+Hadley Wickham and Jennifer Bryan (2022). readxl: Read Excel Files. R package version 1.4.0.
+  https://CRAN.R-project.org/package=readxl
+
+C. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC
+  Florida, 2020.
 
