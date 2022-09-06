@@ -1,5 +1,5 @@
 ---
-title: "An introduction of the three main coffee chains in the world "
+title: "The dominance of coffee chains in worlds' coffee markets"
 author: "Xianghe"
 toc: true
 date: "2022-09-06"
@@ -26,13 +26,13 @@ Coffee is ubiquitous in modern society, it plays an vital role in our daily life
 
 ![](image2.jpg){fig-align="center"}
 
-The history of coffee can be traced hundreds of years ago, and it is becoming a common refreshment drink spreading around the world. Some people with industrious minds recognizes this widespread appeal, and the more of the entrepreneurs uses the opportunity to make coffee a commodity and selling around the world so that they could profit from. Today, we can see coffee chain coffeehouses in every corner of the world, this are the fruits of coffee entrepreneurs' hard work and labor in the numerous coffee chains that have taken root worldwide. There are countless of coffee chains around the world, this post will only analyse three of main coffee chains in the world, which are Starbucks, Tim Hortons and Dunkin' Donuts. The main focus of this post will be Starbucks and using Tim Hortons and Dunkin' Donuts as supplementary to the analysis. We will take a close look at the coffee chain data in this post, especially the Starbucks and aim to see the distribution of coffee stores. In this post, the aim is that to find out whether coffee chain dominate in a market also dominate other markets. 
+The history of coffee can be traced hundreds of years ago, and it is becoming a common refreshment drink spreading around the world. Some people with industrious minds recognizes this widespread appeal, and the more of the entrepreneurs uses the opportunity to make coffee a commodity and selling around the world so that they could profit from. Today, we can see coffee chain coffeehouses in every corner of the world, this are the fruits of coffee entrepreneurs' hard work and labor in the numerous coffee chains that have taken root worldwide. There are countless of coffee chains around the world, this post will only analyse three of main coffee chains in the world, which are Starbucks, Tim Hortons and Dunkin' Donuts. The main focus of this post will be Starbucks and using Tim Hortons and Dunkin' Donuts as supplementary to the analysis. We will take a close look at the coffee chain data in this post, especially the Starbucks and aim to see the distribution of coffee stores. In this post, the aim is that to find out whether coffee chain dominate in a coffee market also dominate other markets. 
 
 
 
 ## Data Description
 
-The data is stored in a XLSX file and contains three set of coffee chain data, which corresponding to Starbucks, Tim Hortons and Dunkin' Donuts respectively. __Starbucks, Tim Hortons and Dunkin' Donuts__, which are the three of main coffee chains in the world. The variables in each of coffee chain data set can be categorized into two groups; __the business store detail__ (store name, store number and store phone number etc) and __the geographical location information__ for each of coffeehouse (i.e. address, postcode, city, country, longitude and latitude etc). 
+The data is stored in a XLSX file and contains three set of coffee chain data, which corresponding to Starbucks, Tim Hortons and Dunkin' Donuts respectively. __Starbucks, Tim Hortons and Dunkin' Donuts__, which are three of main coffee chains in the world. The variables in each of coffee chain data set can be categorized into two groups; __the business store detail__ (store name, store number and store phone number etc) and __the geographical location information__ for each of coffeehouse (i.e. address, postcode, city, country, longitude and latitude etc). 
 <br>
 
 The Starbucks data set contains __`r nrow(coffee)`__ observations and __`r ncol(coffee)`__ variables, and it has included the Starbucks coffeehouses in __`r length(unique(coffee$Country))`__ countries. The Tim Hortons data set contains __`r nrow(coffee2)`__ observations and __`r ncol(coffee2)`__ variables, and it contains only __`r length(unique(coffee2$country))`__ countries' coffeehouses data, which are USA and Canada. Similarly, the Dunkin' Donuts data set contains __`r nrow(coffee3)`__ observations and __`r ncol(coffee3)`__ variables, and it contains only __`r length(unique(coffee3$e_country))`__ country' coffeehouses data, which is __`r unique(coffee3$e_country)`__.
@@ -52,7 +52,48 @@ The data source is from Tidy Tuesday (Thomas Mock) [https://github.com/rfordatas
 
 ## Data Story
 
-We first take a look at the total number of Starbucks coffee houses in each of country. Due to there are __`r length(unique(coffee$Country))`__ countries, I only display the top 20 countries with highest number of Starbucks coffeehouses.
+![](image3.jpg){fig-align="center"}
+
+Despite of that the Starbucks data set contains the coffeehouses data over `r length(unique(coffee$Country))` countries, however, the Tim Hortons data set contains only USA and Canada coffeehouses data and the Dunkin' Donuts data set contains only the coffeehouses data in USA. This is the limitation of the data sets, and the only country that appears in each of the data set is USA. The United States of America (USA) is the world's third largest country in size and nearly the third largest in terms of population, and which means that its coffee market is large. So let's a look at these three coffee chain in USA.
+
+```{r echo=FALSE, warning=FALSE}
+#| fig-cap: __A comparison of popularity of the three coffee chains in USA__ 
+#| fig-cap-location: margin
+c1 <- coffee %>%
+  filter(Country == "US") %>%
+  select(Country) %>%
+  group_by(Country) %>%
+  summarise("Total" = n()) 
+
+c2 <- coffee2 %>%
+  filter(country == "us") %>%
+  select(country) %>%
+  group_by(country) %>%
+  summarise("Total" = n()) 
+
+c3 <- coffee3 %>%
+  filter(e_country == "USA") %>%
+  select(e_country) %>%
+  group_by(e_country) %>%
+  summarise("Total" = n()) 
+
+cc <- data.frame("Coffee" = c("Starbucks", "Tim Hortons", "Dunkin' Donuts"), "Total" = c(c1$Total[1], c2$Total[1], c3$Total[1])) %>%
+  mutate(Coffee = as.factor(Coffee))
+
+cc %>%  
+  ggplot(aes(x = Coffee,
+             y = Total,
+             fill = Coffee)) +
+  scale_fill_brewer(palette = "PuBu") +
+  geom_col() +
+  labs(x = "Coffee Chain", y = "Total Number of Coffeehouses in USA", fill = ("Coffee Chain")) +
+  theme_classic() +
+  geom_text(size = 6, aes(label = Total), vjust = 0)
+```
+The above plot shows the number of coffeehouses of the three coffee chains in USA. Starbucks has 13608 coffeehouses in USA, which is  greater compared with Dunkin' Donuts and Tim Hortons (4898 and 740 coffeehouses respectively). This implies that although Starbucks, Tim Hortons and Dunkin's Donuts are all American-based coffee corporations, Starbucks is actually a more competitive coffee chain out of these three coffee chain.
+<br>
+
+We then take a look at the total number of Starbucks coffee houses in each of country. Due to there are __`r length(unique(coffee$Country))`__ countries, I only display the top 20 countries with highest number of Starbucks coffeehouses.
 
 ```{r echo=FALSE, warning=FALSE}
 #| fig-cap: __Top 20 countries with highest number of Starbucks store__ 
@@ -79,7 +120,7 @@ As the graph illustrate above, the top 20 countries are USA, China, Canada, Japa
 The graph also shows that USA has highest total number of Starbucks coffeehouses among all the countries worldwide, the number of the coffeehouses in USA is far more than other countries' (USA has 13608 coffeehouses). However, despite of extreme high value of number of coffeehouses, this is expected and can be understood; Starbucks Corporation is an American based multinational chain of coffeehouses and headquartered in Seattle, Washington. Also, USA is one of economic dominant countries in the world, and the it has the capacity and the potential to absorb a high number of coffeehouses. So Starbucks has the ground to expand many coffeehouses in USA.
 <br>
 
-Interestingly, Australia is not listed on the graph above! This is a bit of unusual, since Australia is the 6-th largest country in the world, and is 12th largest economy in the world.(IMF, 2022) According to industry statistics, There are 24,929 Cafes and Coffee Shops businesses in Australia as of 2022.(IBIS World, 2022) Indeed, Australia has a big coffee market and Australian market should be one of the global strategies for the coffee chains like Starbucks. 
+Interestingly, Australia is not listed on the graph above! This is a bit of unusual and unexpected, since Australia is the 6-th largest country in the world, and is 12th largest economy in the world.(IMF, 2022) According to industry statistics, there are 24,929 Cafes and Coffee Shops businesses in Australia as of 2022.(IBIS World, 2022) Indeed, Australia has a big coffee market and Australian market should be one of the global strategies for the coffee chains like Starbucks. 
 
 ```{r echo=FALSE, warning=FALSE}
 #| tbl-cap: _Total of Starbucks stores in Australia_
@@ -139,13 +180,15 @@ gridExtra::grid.arrange(p1,p2, ncol = 2)
 ```
 <br>
 
-The plot above makes a comparison of number of Starbucks store between countries Australia and USA. The left side of the plot displays the states which have Starbucks and the number of Starbucks store within the state, it shows that there are only three states in Australia which have Starbucks and each of state has less than 10 Starbucks stores. This creates a distinct contrast with the plot on the right, where the each state in USA has hundreds and thousands of Starbucks stores. 
+The above plot makes a comparison of number of Starbucks store between countries Australia and USA. The left side of the plot displays the Australian states which have Starbucks and the number of Starbucks store within the state, it shows that there are only three states in Australia which have Starbucks and each of state has less than 10 Starbucks stores. This creates a distinct contrast with the plot on the right, where the each state in USA has hundreds and thousands of Starbucks stores. 
 <br>
 
-From the plot, there are hundreds and thousands of Starbucks coffeehouses in each state of USA, this indicates that Starbucks is a giant and dominant in coffee chains industry in USA. However, it would not be the case in Australia, Starbucks is performing poorly in occupying Australian coffee market, where there are only 22 coffeehouses nationwide. 
+From the plot, there are hundreds and thousands of Starbucks coffeehouses in each state of USA, this indicates that Starbucks is a giant and dominant coffee chain in coffee chains industry in USA. However, it would not be the case in Australia, Starbucks is performing poorly in occupying Australian coffee market, where there are only 22 Starbucks coffeehouses nationwide, out of around 25,000 cafes in Australia.
 <br>
 
-By comparing the number of Starbucks in Australia and USA, a conclusion can be drawn on that a global coffee chain may be playing a dominant role in a market, is not necessary being infl
+## Conclusion
+
+By comparing the number of Starbucks coffee stores in Australia and USA, despite of the fact that Starbucks is a competitive coffee chain in USA coffee market, it is not taking much portion of the Australian market. Hence, a conclusion can be drawn on that a global coffee chain may be playing a dominant role in a coffee market, but it may not able to be a dominant coffee chain in another coffee market globally.
 
 ## Reference
 
