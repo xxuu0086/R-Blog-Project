@@ -1,0 +1,14 @@
+{
+  "hash": "edd9e22ad4b421098951a1eb7473b4c1",
+  "result": {
+    "markdown": "---\ntitle: \"An introduction of the three main coffee chains in the world \"\nauthor: \"Xianghe\"\ntoc: true\ndate: \"2022-07-25\"\ncategories: [analysis, code]\nimage: \"map.jpg\"\n---\n\n\n<br>\n\n\n::: {.cell}\n\n:::\n\n\n## Introduction \n\nCoffee is one of necessary in our everyday life. In every part of the world, in every culture, people drink coffee.\nCoffee is ubiquitous in modern society, it plays an vital role in our daily life; it gives people a good start of a day, providing energy to people throughout the work and also enriching people' spare time. \n\n![](image2.jpg){fig-align=\"center\"}\n\nThe history of coffee can be traced hundreds of years ago, and it is becoming a common refreshment drink spreading around the world. Some people with industrious minds recognizes this widespread appeal, and the more of the entrepreneurs uses the opportunity to make coffee a commodity and selling around the world so that they could profit from. Today, we can see coffee chain coffeehouses in every corner of the world, this are the fruits of coffee entrepreneurs' hard work and labor in the numerous coffee chains that have taken root worldwide. There are countless of coffee chains around the world, this post will only analyse three of main coffee chains in the world, which are Starbucks, Tim Hortons and Dunkin' Donuts. The main focus of this post will be Starbucks and using Tim Hortons and Dunkin' Donuts as supplementary to the analysis. \n\n\n\n## Data Description\n\nThe data is stored in a XLSX file and contains three set of coffee chain data, which corresponding to Starbucks, Tim Hortons and Dunkin' Donuts respectively. Starbucks, Tim Hortons and Dunkin' Donuts, which are the three of main coffee chains in the world. The variables in each of coffee chain data set can be categorized into two groups; the business store detail (store name, store number and store phone number etc) and the geographical location information (i.e. address, postcode, city, country, longitude and latitude etc). \n\nThe Starbucks data set contains __25600__ observations and __13__ variables, and it has included the Starbucks coffeehouses in __73__ countries.\n\nand data set also shows that the majority part of business are located in USA and Canada. Moreover, this coffee chain data also includes the coffee chain name, business name and some other location of each coffeehouse. \n\nThe data source is from github [coffee chains](https://github.com/rfordatascience/tidytuesday/blob/master/data/2018/2018-05-07) data.\n\n## Data Resources\n\n<iframe src=\"https://cwd.numbat.space/lectures/lecture-01.html\" style=\"border: 1px solid black;\" width=\"100%\" height = \"400px\"></iframe>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

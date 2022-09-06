@@ -15,10 +15,8 @@ This page provides an alternative to access the data set directly.
 ```{r echo=FALSE, warning=FALSE}
 library(DT)
 coffee <- readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx")
-coffee2 <-
-  readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 2)
-coffee3 <-
-  readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 3)
+coffee2 <- readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 2)
+coffee3 <- readxl::read_xlsx("posts/week01/week6_coffee_chains.xlsx", sheet = 3)
 datatable(coffee)
 ```
 
