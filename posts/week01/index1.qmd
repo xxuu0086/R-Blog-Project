@@ -105,13 +105,15 @@ data1 <- coffee %>%
   arrange(desc(Total)) %>%
   head(20) 
 
-data1 %>%
+data2 <- data1 %>%
   ggplot(aes(x = forcats::fct_reorder(as.factor(Country), desc(Total)),
              y = Total)) +
   geom_col(fill = "#4db7f0") +
   labs(x = "Country", y = "Total Number of Coffeehouses") +
   theme_classic() +
-  geom_text(size = 3, aes(label = Total), vjust = -1)
+  geom_text(size = 3, aes(label = Total), vjust = -2)
+
+ggplotly(data2)
 ```
 
 As the graph illustrate above, the top 20 countries are USA, China, Canada, Japan, South Korea, United Kingdom, Mexico, Turkey, Philippines, Thailand, Indonesia, Malaysia, Germany, United Arab Emirates, France, Singapore, Russia, Argentina and Kuwait, and the countries are ordered from highest to lowest according to number of Starbucks coffeehouse in the country. 
